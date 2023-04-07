@@ -52,7 +52,7 @@ function Register() {
             Password <input type='text' onChange={setPassword} value={users.password}></input>
             <button className="submit-btn" onClick={createNewUser}>Submit</button>
             <div className="message">{message}</div>
-            <Link to="/login" className="login-link">Login</Link>
+            <Link to="/" className="login-link">Login</Link>
         </div>
         </>
     )
