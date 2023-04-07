@@ -7,7 +7,7 @@ By using RESTful api, I am making requests with Axios to one of the NASA's open 
 updates the astronomy picture and its according infromation everyday so when user either sign up or login to my website, they can see this daily updates
 as well.
 
-Notes/Nice to have:
+Notes/Will be Nice to have:
 * Currently the website doens't provide cookies so when the user is registered or logged in, re-routed to the picture page,
   and clicks the back arrow button the website doesn't remember that the user is logged in.
 * Styling of the current website is set to minimal -- It is responsive so it is mobile friendly; however if I had more time it would have been fun to
