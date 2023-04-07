@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './Home';
+import Picture from './Picture';
 import Login from './Login';
 import Register from './Register';
 
@@ -11,8 +11,8 @@ function App() {
     <Router>
       <>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/picture" element={<Picture />} />
           <Route path="/signup" element={<Register />} />
           <Route path="*" element={<Login />} /> 
         </Routes>

@@ -33,12 +33,12 @@ function Register() {
         const response = await axios.post('http://localhost:8000/api/signup', users)
         // if response.data is user successfully created navigate to home
         if (response.data == 'user created') {
-            navigate('/');
+            navigate('/picture');
             setUsers({firstName: '', lastName: '', email: '', password: ''});
         }
         else {
             setUsers({firstName: '', lastName: '', email: '', password: ''});
-            setMessage('User with the login exist. Please login');
+            setMessage('User with the email exist. Please login');
         }
     }
 

@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios');
-const login = require('./login');
 const register = require('./signup');
+const picture = require('./picture');
+const signupModel = require('./user_model');
 const mongoose = require('mongoose');
 require('dotenv').config(); // to use the api key from .env file
 
@@ -21,24 +21,30 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/login/', login);
+//backend url
 app.use('/api/signup/', register);
+app.use('/api/picture/', picture);
 
 app.get('/', function(req, res) {
-    const options = {
-        method: 'GET',
-        url: `https://api.nasa.gov/planetary/apod?api_key=${ process.env.API_KEY}`,
-        headers: {
-            'nasa-host': 'api.nasa.gov/planetary/apod',
-            'api-key': process.env.API_KEY
+    res.send('this is a login page');
+})
+
+app.post('/', async function(req, res) {
+    const body = req.body;
+    const response = await signupModel.findUserByEmail(body.email);
+    if (response.length !== 0) { // returned an array of an object with the unique email
+        //if stored pw == body.password
+        if (response[0].password == body.password) {
+            res.send('login success');
+        }
+        // email exist but pw is wrong
+        else {
+            res.send('wrong password');
         }
     }
-
-    axios.request(options).then((response) => {
-        res.send(response.data)
-    }).catch((error) => {
-        console.error(error)
-    })
+    else {
+        res.send('need signup first');
+    }
 })
 
 app.listen(8000, function () {

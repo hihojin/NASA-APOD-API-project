@@ -23,9 +23,9 @@ function Login() {
             setMessage('Please fill all fields');
             return;
         }
-        const response = await axios.post('http://localhost:8000/api/login', users)
+        const response = await axios.post('http://localhost:8000/', users)
         if (response.data == 'login success') {
-            navigate('/');
+            navigate('/picture');
         }
         else if (response.data == 'wrong password') {
             setMessage('Wrong password. Please try again');

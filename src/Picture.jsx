@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import Display from './Display';
 
-function Home() {
+function Picture() {
     const [data, setData] = useState([]);
     useEffect(() => {
         const options = {
         method: 'GET',
-        url: 'http://localhost:8000/'
+        url: 'http://localhost:8000/api/picture'
         }
         axios.request(options).then((response) => {
         data.push(response.data); // as an object
@@ -23,4 +23,4 @@ function Home() {
     
 }
 
-export default Home;
+export default Picture;
