@@ -7,6 +7,8 @@ By using RESTful api, I am making requests with Axios to one of the NASA's open 
 updates the astronomy picture and its according infromation everyday so when user either sign up or login to my website, they can see this daily updates
 as well.
 
+Deployed here to vercel.com: https://nasa-apod-api-project.vercel.app/
+
 Notes/Will be Nice to have:
 * Currently the website doens't provide cookies so when the user is registered or logged in, re-routed to the picture page,
   and clicks the back arrow button the website doesn't remember that the user is logged in.
