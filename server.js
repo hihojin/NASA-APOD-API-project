@@ -6,7 +6,7 @@ const signupModel = require('./user_model');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-let mongoEndpoint = 'mongodb://0.0.0.0/0/project_app';
+let mongoEndpoint = 'mongodb://0.0.0.0/0/myFirstDatabase';
 if (process.env.MONGODB_URI) {
     mongoEndpoint = process.env.MONGODB_URI;
 }
