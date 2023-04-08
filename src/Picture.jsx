@@ -7,7 +7,7 @@ function Picture() {
     useEffect(() => {
         const options = {
         method: 'GET',
-        url: `http://localhost:${import.meta.env.VITE_APP_PORT || 3000}/api/picture`
+        url: `http://localhost:${import.meta.env.VITE_APP_PORT || 8000}/api/picture`
         }
         axios.request(options).then((response) => {
         data.push(response.data); // as an object
