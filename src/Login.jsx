@@ -23,7 +23,7 @@ function Login() {
             setMessage('Please fill all fields');
             return;
         }
-        const response = await axios.post(`http://127.0.0.1:${import.meta.env.VITE_APP_PORT || 3000}/`, users)
+        const response = await axios.post(`http://localhost:${import.meta.env.VITE_APP_PORT || 3000}/`, users)
         if (response.data == 'login success') {
             navigate('/picture');
         }

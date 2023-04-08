@@ -30,7 +30,7 @@ function Register() {
             setMessage('Please fill all fields');
             return;
         }
-        const response = await axios.post(`http://127.0.0.1:${import.meta.env.VITE_APP_PORT || 3000}/api/signup`, users)
+        const response = await axios.post(`http://localhost:${import.meta.env.VITE_APP_PORT || 3000}/api/signup`, users)
         // if response.data is user successfully created navigate to home
         if (response.data == 'user created') {
             navigate('/picture');
