@@ -6,10 +6,14 @@ const signupModel = require('./user_model');
 const mongoose = require('mongoose');
 require('dotenv').config(); // to use the api key from .env file
 
-let mongoEndpoint = 'mongodb://127.0.0.1/project_app';
-if (process.env.MONGO) {
-    mongoEndpoint = process.env.MONGO;
+//let mongoEndpoint = 'mongodb://127.0.0.1/project_app';
+let mongoEndpoint = 'mongodb://000.0.0.0/project_app';
+if (process.env.VERCEL) {
+    mongoEndpoint = process.env.VERCEL;
 }
+// if (process.env.MONGO) {
+//     mongoEndpoint = process.env.MONGO;
+// }
 mongoose.connect(mongoEndpoint, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'Error connecting to MongoDB:'));
