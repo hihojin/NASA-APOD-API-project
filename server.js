@@ -4,7 +4,7 @@ const register = require('./signup');
 const picture = require('./picture');
 const signupModel = require('./user_model');
 const mongoose = require('mongoose');
-require('dotenv').config(); // to use the api key from .env file
+require('dotenv').config();
 
 let mongoEndpoint = 'mongodb://0.0.0.0/0/project_app';
 if (process.env.MONGODB_URI) {
@@ -49,7 +49,7 @@ app.post('/', async function(req, res) {
         res.send('need signup first');
     }
 })
-
-app.listen(8000, function () {
-    console.log('Starting server');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+    console.log('Starting server' + `${PORT}`);
   });
