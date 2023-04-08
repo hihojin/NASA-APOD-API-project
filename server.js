@@ -6,10 +6,9 @@ const signupModel = require('./user_model');
 const mongoose = require('mongoose');
 require('dotenv').config(); // to use the api key from .env file
 
-//let mongoEndpoint = 'mongodb://127.0.0.1/project_app';
-let mongoEndpoint = 'mongodb://000.0.0.0/project_app';
-if (process.env.VERCEL) {
-    mongoEndpoint = process.env.VERCEL;
+let mongoEndpoint = 'mongodb://0.0.0.0/0/project_app';
+if (process.env.MONGODB_URI) {
+    mongoEndpoint = process.env.MONGODB_URI;
 }
 // if (process.env.MONGO) {
 //     mongoEndpoint = process.env.MONGO;
