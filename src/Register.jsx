@@ -30,8 +30,8 @@ function Register() {
             setMessage('Please fill all fields');
             return;
         }
-        const response = await axios.post(`https://nasa-apod-api-project.vercel.app/api/signup`, users)
-        //const response = await axios.post(`http://localhost:${import.meta.env.VITE_APP_PORT || 8000}/api/signup`, users)
+        //const response = await axios.post(`https://nasa-apod-api-project.vercel.app/api/signup`, users)
+        const response = await axios.post(`http://localhost:${import.meta.env.VITE_APP_PORT || 8000}/api/signup`, users)
         // if response.data is user successfully created navigate to home
         if (response.data == 'user created') {
             navigate('/picture');
