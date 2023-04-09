@@ -23,7 +23,7 @@ function Login() {
             setMessage('Please fill all fields');
             return;
         }
-        const response = await axios.post(`https://nasa-apod-api-project.vercel.app/`, users)
+        const response = await axios.post(`https://nasa-apod-api-project.vercel.app.com/`, users)
         //const response = await axios.post(`http://localhost:${import.meta.env.VITE_APP_PORT || 3000}/`, users)
         if (response.data == 'login success') {
             navigate('/picture');

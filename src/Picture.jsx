@@ -7,7 +7,7 @@ function Picture() {
     useEffect(() => {
         const options = {
         method: 'GET',
-        url: `https://nasa-apod-api-project.vercel.app/picture`
+        url: `https://nasa-apod-api-project.vercel.app.com/picture`
         //url: `http://localhost:${import.meta.env.VITE_APP_PORT || 8000}/api/picture`
         }
         axios.request(options).then((response) => {
