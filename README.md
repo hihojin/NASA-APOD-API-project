@@ -1,7 +1,5 @@
 # NASA-APOD-API-project
 
-Deployed to vercel here ---> https://nasa-apod-api-project.vercel.app/
-
 main tools used: MongoDB, ExpressJS, ReactJS(vite), NodeJS, NASA'S APOD api.
 
 When user sign-up or login to the website the website naviagtes user to the picture page where they can see the astronomy picture of the day.
